@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
@@ -16,7 +17,7 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none">
+<video id="video" autoplay loop playsinline crossOrigin="anonymous" webkit-playsinline style="display:none">
 	<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
 	<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 </video>
@@ -155,6 +156,20 @@ function animate()
 	update();
 	render();
 }
+	
+function playVideo(){
+	let video = document.getElementById('video');
+	video.play();
+}
+playVideo();
+	
+var toggleSound = document.body.addEventListener('touchstart', function(){
+        if(video.muted === true){
+          video.muted=false;
+        } else if(video.muted === false){
+          video.muted=true;
+        }
+      });
 
 </script>
 
