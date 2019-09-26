@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
@@ -132,6 +133,11 @@ function animate()
 	update();
 	render();
 }
+	function playVideo(){
+	let video = document.getElementById('video');
+	video.play();
+}
+playVideo();
 </script>
 
 </body>
